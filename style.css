@@ -4,7 +4,7 @@
 }
 
 body{
-    background-image: url("/form/employee/bg-image.webp");
+    background-image: url("/employee-satisfaction-main/bg-image.webp");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -15,14 +15,14 @@ body{
 }
 
 .main-area{
-    border: 2px solid black ;
+    /* border: 2px solid black ; */
     margin: 40px 90px;
     height: auto;
     background-color: #fff;
 } 
 
 .logo-img{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin: 10px 20px;
 }
 
@@ -32,7 +32,7 @@ img{
 } 
 
 h1{
-    border: 1px solid green;
+    /* border: 1px solid green; */
     margin: 0px 20px;
     padding: 5px 10px; 
     font-size: 45px;
@@ -42,7 +42,7 @@ h1{
 }
 
 .heading-para{
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
     margin: 0px 20px;
     padding: 5px 10px;
     color: #00a9bf;
@@ -50,20 +50,20 @@ h1{
 }
 
 form{
-    border: 1px solid green;
+    /* border: 1px solid green; */
     margin: 10px 20px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .label{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 35%;
     margin-right: 5px;
     padding: 5px;
 }
 
 input[type=text]{
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
     height: 30px;
     border: none;
     border-bottom: 2px solid #02bfc9;
@@ -76,7 +76,7 @@ input[type=text]{
 }
 
 .name{
-    border: 1px solid green;
+    /* border: 1px solid green; */
     width: 272px;
     display: flex;
     flex-direction: column;
@@ -89,7 +89,7 @@ input[type=text]{
 }
 
 .emp-id{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin: 30px 0px; 
     margin-right: 10px;
 }
@@ -99,36 +99,145 @@ input[type=text]{
     width: 70%
 }
 
-.supervisor-rating{
-    border: 1px solid gray;
+.rating{
+    /* border: 1px solid gray; */
     margin-right: 10px;
     width: 100%;
     font-size: 14px;
     display: flex;
     margin-right: 20px;
     align-items: center;
+    padding-top: 8px;
 }
 
-.supervisor-text{
+.rating-text,.feedback-text{
     width: 190px;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     margin-right: 10%;
+    margin-bottom: 20px;
 }
 
+.star-btn,.heart-btn{
+    /* border: 1px solid green; */
+    margin-bottom: 80px;
+    direction: rtl;
+}
 
-/* button{
-    width: 50px;
-    height: 40px;
-    background: transparent;
-    border: none;
+/* .heart-btn{
+    margin-bottom: 80px;
 } */
 
-i{
-    font-size: 30px;
-    font-weight: lighter;
-    color: #00a9bf;
+.star-btn label,.heart-btn label{
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 4rem;
 }
 
-i:hover{
-    color: green;
+.star-btn label::before{
+    content:"\2605";
+    font-size: 3rem;
+    color: #00a9bf;
+    width: 4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.heart-btn label::before{
+    content: "\2665";
+    font-size: 3rem;
+    color: #00a9bf;
+    width: 4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.star-btn input,.heart-btn input{
+    display: none;
+}
+
+.star-btn label::after{
+    content:"\2605";
+    font-size: 3rem;
+    color: #213d41;
+    width: 4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.heart-btn label::after{
+    content: "\2665";
+    font-size: 3rem;
+    color: #182a2c;
+    width: 4rem; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.heart-btn label:hover::after,
+.star-btn label:hover::after,
+.heart-btn label:hover ~label::after,
+.star-btn label:hover ~label::after,
+.heart-btn input:checked ~label::after,
+.star-btn input:checked ~label::after{
+    opacity: 1;
+}
+
+.dropdown-options,.radio-options,.feedback{
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.dropdown-details{
+    width: 90%;
+    /* border: 1px solid red; */
+}
+
+select{
+    width: 98%;
+    height: 30px;
+    border: none;
+    border-bottom: 2px solid #02bfc9;
+}
+
+.radio-btn{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 22px;
+    color: #02bfc9;
+}
+
+input[type=radio]{
+    padding-left: 8px;
+}
+
+#feedback{
+    border: none;
+    border-bottom: 2px solid #02bfc9;
+}
+
+.submit-btn{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+button{
+    background-color: #00a9bf;
+    color: white;
+    width: 10rem;
+    height: 3rem;
+    border-radius: 0.3rem;
+    border: none;
+    font-size: 1.3rem;
 }
